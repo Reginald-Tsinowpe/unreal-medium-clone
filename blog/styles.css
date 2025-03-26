@@ -1,0 +1,95 @@
+body, html{
+    overflow: auto !important; 
+    height: auto !important;
+    padding-bottom:70px;
+}
+#header-special-separator{
+    height:5px;
+    background-color: rgb(117, 117, 255);
+    border:none;
+}
+
+
+main{
+    display:flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#creator-info-div{
+    height:100px;
+    width:100%;
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+}
+#creator-info-inner{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap:20px;
+}
+#creator-info-reactions{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#main-body{
+
+}
+
+.bacon-text{
+    font-family: Helvetica;
+
+}
+
+
+#see-all-from-user{
+    text-decoration: none;
+    color:black;
+    font-size: medium;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid black;
+    width: max-content;
+}
+
+#creator-grid{
+    margin-bottom: 40px;
+}
+
+@media (max-width: 480px){
+    #header-two nav{
+        display:none;
+    }
+    main{
+        width: 100%
+
+    }
+    #creator-grid{
+        display:flex;
+        flex-direction: column;
+    }
+
+}
+
+@media (min-width:480px){
+    main{
+        width:90%;
+    }
+    #creator-grid{
+        
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+}
+
+@media (min-width:720px){
+    main{
+        width:60%;
+
+    }
+
+}
