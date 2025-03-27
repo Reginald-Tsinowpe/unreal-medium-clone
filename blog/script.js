@@ -1,4 +1,3 @@
-alert("I will finish this part today.");
 document.addEventListener("DOMContentLoaded", function () {
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -12,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("blog-title").textContent = data.title;
                 document.getElementById("blog-body").textContent = data.body;
 
+                //      FILLING THE MAIN BLOG BODY WITH BACON IPSUM  TEXT
                 for (let i = 0; i <= 3; i++) {
                     let bacon_ipsum = document.createElement("div");
                     bacon_ipsum.className = "bacon-text";
@@ -40,6 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     .then(comment_data => {
                         let comment_div = document.getElementById("responses");
                         comment_div.innerHTML = ""; // Clear previous content if any
+                        let comment_div_header = document.createElement('h2');
+                        comment_div_header.style ="color:rgb(48, 48, 48); font-family: Helvetica;";
+                        comment_div_header.textContent = "Responses";
+
+                        comment_div.appendChild(comment_div_header);
 
                         comment_data.forEach(comment => {
                             let singleComment = document.createElement("div");
@@ -49,9 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <i class="fa-regular fa-circle-user"></i>
                                 <strong>${comment.name}</strong> (<em>${comment.email}</em>)<br>
                                 <p>${comment.body}</p>
-                                <i class="fa-solid fa-hands-clapping" data-tip="x claps"></i>
-                                <i class="fa-solid fa-comment" data-tip="x responses"></i>
-                                <a style="color:black;">Reply</a>
+                                <i class="fa-solid fa-hands-clapping" ></i>
+                                
+                                <a style="color:black; text-decoration:underline; margin-left:20px">Reply</a>
                                 <hr>
                             `;
 
@@ -64,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     fetch(`https://jsonplaceholder.typicode.com/users/${data.userId}/posts`
                     ).then(response=>response.json()).then(user_posts => {
                         let more_from_user_div = document.getElementById("creator-grid");
+                        
                         
                         user_posts.slice(0, 4).forEach(user_post => {
 
@@ -84,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         })
                     });
 
-                    //      FETCHING THE USER' NAME FOR THE "SEE ALL FROM USER LINK UNDER THE USER'S OTHER POSTS"
+                    //      FETCHING THE USER' NAME FOR THE "SEE ALL FROM USER" LINK UNDER THE USER'S OTHER POSTS
             fetch(`https://jsonplaceholder.typicode.com/users/${data.userId}`)
             .then(response => response.json()).then(user_data => {
                 let all_from_user = document.createElement('a')
@@ -93,8 +99,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 all_from_user.id = "see-all-from-user";
                 document.getElementById("more-from-creator").appendChild(all_from_user);
 
+                //      PLACING THE CREATOR'S NAME ABOVE THE GRID/FLEX SHOWING THE CREATOR'S OTHER POSTS/BLOGS
+                document.getElementById("more-from-creator").innerHTML = `<h2 class="creator-name-in-more-from-creator">More from ${user_data.name}</h2>` + document.getElementById("more-from-creator").innerHTML
 
-                document.getElementById("post-creator-name").textContent = user_data.name;
+                //      ALSO PLACING THE USERNAME AND COMPANY NAME IN #creator-info-div
+                document.getElementById("post-creator-name").textContent = user_data.name + "            •   ";
                 document.getElementById("user-bio").textContent = user_data.company.catchPhrase;
             })
 

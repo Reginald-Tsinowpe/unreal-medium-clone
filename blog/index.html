@@ -49,7 +49,7 @@
             <hr id="header-special-separator">
 
         <div id="header-two">
-            <p>Level Up X</p>
+            <p>Level Up Your Skills</p>
             <nav>
                 <a href="./../">Home</a>
                 <a href="">Newsletter</a>
@@ -78,7 +78,7 @@
         <div id="creator-info-div">
             <div id="creator-info-inner">
 
-                <i class="fa-solid fa-circle-user"></i>
+                <i class="fa-solid fa-circle-user creator-image"></i>
                 <p id="post-creator-name"></p>
                 <a href="http://example.com" style="color:black; text-decoration: underline;">Follow</a>
 
@@ -87,14 +87,16 @@
             <div id="user-bio"></div>
             
             <div id="creator-info-reactions">
-                <div>
-                    <i class="fa-solid fa-hands-clapping" data-tip="x claps"></i>
-                    <i class="fa-solid fa-comment" data-tip="x responses"></i>
+                <div id="creator-info-reactions-left-div">
+                    <a href="#responses" style="color:black"><i class="fa-solid fa-hands-clapping" data-tip="claps"></i></a>
+                    <a href="#responses" style="color:black"><i class="fa-solid fa-comment" data-tip="responses"></i></a>
                 </div>
                 
-                <div>
-                    <i class="fa-solid fa-ban" data-tip="show less like this"></i>
+                <div id="creator-info-reactions-right-div">
+                    
                     <i class="fa-solid fa-bookmark" data-tip="save"></i>
+                    <i class="fa-regular fa-circle-play" data-tip="listen"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square" data-tip="share"></i>
                     <i class="fa-solid fa-ellipsis" data-tip="more"></i>
                 </div>
             </div>
@@ -103,9 +105,12 @@
 
         <div id="main-body"></div>
 
-        <div id="responses"></div>
+        <div id="responses">
+            
+        </div>
 
         <div id="more-from-creator">
+            
             <div id="creator-grid"></div>
         </div>
         

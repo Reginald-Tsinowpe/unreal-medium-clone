@@ -8,6 +8,16 @@ body, html{
     background-color: rgb(117, 117, 255);
     border:none;
 }
+#header-two nav a{
+    color: rgb(58, 58, 58);
+    margin-right:20px;
+}
+#header-two nav{
+    margin-left:30px;
+    align-self: center;
+    justify-self: center;
+    
+}
 
 
 main{
@@ -16,12 +26,34 @@ main{
     margin: 0 auto;
 }
 
+#blog-title{
+    font-family: Helvetica;
+    color:black;
+    margin-bottom:5px;
+}
+.creator-image{
+    font-size:250%;
+    color:rgb(255, 142, 161);
+}
+#post-creator-name{
+    font-family: Helvetica;
+    color:black;
+}
+#blog-body{
+    font-family: Helvetica;
+    color:rgb(31, 31, 31);
+}
+#user-bio{
+    margin-left:50px;
+    font-family:Helvetica;
+}
 #creator-info-div{
-    height:100px;
+    height:max-content;
     width:100%;
-    background-color: rgb(221, 221, 221);
+    
     display: flex;
     flex-direction: column;
+    margin-bottom:30px;
 }
 #creator-info-inner{
     display:flex;
@@ -34,6 +66,14 @@ main{
     flex-direction: row;
     justify-content: space-between;
 }
+#creator-info-reactions-left-div, #creator-info-reactions-right-div{
+    display:flex;
+    flex-direction: row;
+    gap:15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top:50px;
+}
 #main-body{
 
 }
@@ -44,6 +84,11 @@ main{
 }
 
 
+.creator-name-in-more-from-creator{
+    font-family: Helvetica;
+    color:rgb(31, 31, 31);
+    
+}
 #see-all-from-user{
     text-decoration: none;
     color:black;
