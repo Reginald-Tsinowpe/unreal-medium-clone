@@ -1,4 +1,6 @@
+alert("I will finish this part today.");
 document.addEventListener("DOMContentLoaded", function () {
+
     const urlParams = new URLSearchParams(window.location.search);
     const blogUrl = urlParams.get("open-blog");
 
